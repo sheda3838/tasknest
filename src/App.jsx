@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Sidebar } from "./components/Sidebar";
 import { KanbanBoard } from "./components/KanbanBoard";
+import { Dashboard } from "./components/Dashboard";
 import { ThemeToggle } from "./components/ThemeToggle";
 import { db } from "./lib/db";
 import { useLiveQuery } from "dexie-react-hooks";
@@ -15,13 +16,15 @@ function App() {
     if (folders && folders.length > 0) {
       const savedFolderId = localStorage.getItem("tasknest_last_folder");
       if (!selectedFolderId) {
-        if (
+        if (savedFolderId === "dashboard") {
+          setSelectedFolderId("dashboard");
+        } else if (
           savedFolderId &&
           folders.find((f) => f.id === parseInt(savedFolderId))
         ) {
           setSelectedFolderId(parseInt(savedFolderId));
         } else {
-          setSelectedFolderId(folders[0].id);
+          setSelectedFolderId("dashboard"); // Default to dashboard if folders exist
         }
       }
     }
@@ -40,7 +43,9 @@ function App() {
       />
 
       <main className="flex-1 flex flex-col h-full overflow-hidden relative">
-        {selectedFolderId ? (
+        {selectedFolderId === "dashboard" ? (
+          <Dashboard onNavigate={handleSelectFolder} />
+        ) : selectedFolderId ? (
           <KanbanBoard folderId={selectedFolderId} />
         ) : (
           <div className="flex-1 flex flex-col items-center justify-center text-muted-foreground">

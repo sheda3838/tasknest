@@ -26,6 +26,7 @@ import {
   GripVertical,
   Check,
   X,
+  LayoutDashboard,
 } from "lucide-react";
 import { cn } from "../lib/utils";
 
@@ -214,6 +215,21 @@ export function Sidebar({ selectedFolderId, onSelectFolder }) {
       </div>
 
       <div className="flex-1 overflow-y-auto p-3">
+        <div className="mb-4">
+          <button
+            onClick={() => onSelectFolder("dashboard")}
+            className={cn(
+              "w-full flex items-center gap-2 p-2 rounded-md transition-colors",
+              selectedFolderId === "dashboard"
+                ? "bg-primary text-primary-foreground font-medium"
+                : "text-muted-foreground hover:bg-muted"
+            )}
+          >
+            <LayoutDashboard size={18} />
+            <span>Dashboard</span>
+          </button>
+        </div>
+
         <div className="flex items-center justify-between mb-2 px-2">
           <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
             Folders
@@ -269,7 +285,9 @@ export function Sidebar({ selectedFolderId, onSelectFolder }) {
       </div>
 
       <div className="p-4 border-t border-border flex items-center justify-between bg-muted/20">
-        <span className="text-xs text-muted-foreground">TaskNest Sheda Edition v1.0</span>
+        <span className="text-xs text-muted-foreground">
+          TaskNest Sheda Edition v1.0
+        </span>
         <ThemeToggle />
       </div>
     </div>

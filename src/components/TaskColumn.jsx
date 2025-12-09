@@ -13,7 +13,7 @@ export function TaskColumn({ id, title, tasks, onEdit }) {
   const count = tasks.length;
 
   return (
-    <div className="flex flex-col h-full bg-muted/40 rounded-xl p-2 border border-border/50">
+    <div className="flex flex-col h-full bg-muted/40 rounded-xl p-2 border border-border/50 min-h-0">
       <div className="flex items-center justify-between px-2 py-3 mb-2">
         <div className="flex items-center gap-2">
           <h2 className="font-semibold text-sm uppercase tracking-wider text-foreground/80">

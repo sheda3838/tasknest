@@ -193,7 +193,7 @@ export function KanbanBoard({ folderId }) {
         onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full overflow-hidden pb-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full overflow-hidden pb-2 min-h-0">
           <TaskColumn
             id="todo"
             title="Todo"
