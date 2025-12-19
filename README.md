@@ -1,16 +1,70 @@
-# React + Vite
+# 🗂 TaskNest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **personal productivity web app** to organize tasks in folders with a **Kanban-style workflow**.  
+Helps users visually manage tasks, track deadlines, prioritize work, and stay organized — fully frontend with persistent storage.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Key Features
 
-## React Compiler
+- Create, rename, delete, and reorder **folders**  
+- Inside each folder: **3-column Kanban board** (Todo / Doing / Done)  
+- Add tasks with **title** and optional **deadline**  
+- Auto-calculate **days remaining** and **priority** (high/medium/low)  
+- **Auto-sort tasks** by urgency  
+- **Drag & drop** to reorder tasks inside columns or move between columns  
+- **Light / Dark mode toggle**  
+- Persistent storage using **IndexedDB (Dexie.js)** — tasks remain after refresh  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+- **Frontend:** React + Tailwind CSS  
+- **State / Storage:** Dexie.js (IndexedDB)  
+- **Drag & Drop:** dnd-kit  
+- **Date Handling:** date-fns  
+- **Icons:** lucide-react  
+- **Build Tool:** Vite  
+- **Linting:** ESLint  
+- **Deployment:** Vercel  
+
+---
+
+## 🚀 Deployment / Live Link
+
+- Frontend hosted on **Vercel**: [TaskNest Live](https://tasknest-one.vercel.app/)  
+
+---
+
+## 🧠 What I Learned
+
+- Managing **persistent state** in a frontend-only app using **IndexedDB / Dexie.js**  
+- Implementing **drag & drop** in React using **dnd-kit**  
+- Handling **deadline calculations** and **auto-prioritization**  
+- Building **responsive, clean UI** with Tailwind CSS  
+- Deploying a full frontend app on **Vercel**  
+
+---
+
+## 💻 How to Run Locally
+
+```bash
+# Clone the repo
+git clone https://github.com/sheda3838/TaskNest.git
+
+# Go to project folder
+cd TaskNest
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build locally
+npm run preview
